@@ -1,5 +1,8 @@
 <!-- ============== | head | =================-->
-<?php  include "layouts/head.php";     ?>
+<?php  
+session_start();
+if(isset($_SESSION["user"])){
+include "layouts/head.php";     ?>
 <!--==========================================-->
 
 
@@ -9,7 +12,10 @@
         <div class="content-header row">
         </div>
         <div class="content-body">
-
+        <?php 
+            
+                echo $_SESSION["user"]["nombre_u"].' '.$_SESSION["user"]["apellido_u"];
+        ?>
         </div>
     </div>
 </div>
@@ -20,7 +26,13 @@
 <!--==========================================-->
 
 <!-- ============= | footer | ================-->
-<?php  include "layouts/footer.php";      ?>
+<?php  include "layouts/footer.php";      
+}
+else{
+    header("location:../");
+}
+
+?>
 <!--==========================================-->
 
 

@@ -16,10 +16,13 @@
             <ul class="nav navbar-nav float-xs-right">
               <li class="dropdown dropdown-notification nav-item"><a href="#" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon icon-bell4"></i><span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span></a></li>
               <li class="dropdown dropdown-notification nav-item"><a href="#" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon icon-mail6"></i><span class="tag tag-pill tag-default tag-info tag-default tag-up">8</span></a></li>
-              <li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></span><span class="user-name"></span></a>
+              <li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></span><span class="user-name"><?php echo $_SESSION["user"]["nombre_u"].' '.$_SESSION["user"]["apellido_u"]; ?></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="#" class="dropdown-item"><i class="icon-head"></i> Editar perfil</a>
-                  <div class="dropdown-divider"></div><a href="#" class="dropdown-item"><i class="icon-power3"></i>Cerrar sesión</a>
+                  <div class="dropdown-divider"></div>
+                  <form action="../controllers/UsuarioController.php?operador=cerrar_sesion" method="POST">
+                    <button type="submit" class="dropdown-item"><i class="icon-power3"></i>Cerrar sesión</button>
+                  </form>
                 </div>
               </li>
             </ul>

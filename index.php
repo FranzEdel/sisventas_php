@@ -1,3 +1,12 @@
+<?php 
+session_start();
+
+if(isset($_SESSION["user"])){
+    header("location:pages/welcome.php");
+}
+else{
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,13 +51,13 @@
                         <div class="card-block">
                             <form class="form-horizontal form-simple" >
                                 <fieldset class="form-group position-relative has-icon-left mb-0">
-                                    <input type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Ingrese su correo">
+                                    <input type="text" class="form-control form-control-lg input-lg" id="user_correo" placeholder="Ingrese su correo">
                                     <div class="form-control-position">
                                         <i class="icon-head"></i>
                                     </div>
                                 </fieldset>
                                 <fieldset class="form-group position-relative has-icon-left">
-                                    <input type="password" class="form-control form-control-lg input-lg" id="user-password" placeholder="Ingrese su contraseña">
+                                    <input type="password" class="form-control form-control-lg input-lg" id="user_clave" placeholder="Ingrese su contraseña">
                                     <div class="form-control-position">
                                         <i class="icon-key3"></i>
                                     </div>
@@ -62,15 +71,12 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><a href="" class="card-link">Olvidaste tu contraseña ?</a></div>
                                 </fieldset>
-                                <button type="button" class="btn btn-primary btn-lg btn-block"><a href="pages/welcome" style="color:white;"><i class="icon-unlock2"></i> Iniciar sesión</a></button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ValidarUsuario();"><i class="icon-unlock2"></i> Iniciar sesión</button>
                             </form>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="">
-                            <p class="float-sm-left text-xs-center m-0"><a href="" class="card-link">Recover password</a></p>
-                            <p class="float-sm-right text-xs-center m-0">New to Robust? <a href="" class="card-link">Sign Up</a></p>
-                        </div>
+                    <div id="status-login" class="card-footer">
+                        
                     </div>
                 </div>
             </div>
@@ -78,5 +84,10 @@
       </div>
     </div>
 
+    <script src="app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/Usuario.js" type="text/javascript"></script>
   </body>
 </html>
+<?php 
+}
+?>

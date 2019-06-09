@@ -2,7 +2,7 @@
 
     define("SERVIDOR","localhost");
 
-    define("DATABASE","bd_sisventas");
+    define("DATABASE","db_sisventas_php");
 
     define("USERNAME","root");
 

@@ -2,7 +2,17 @@
 <div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
 
       <div class="main-menu-header">
-        <input type="text" placeholder="Search" class="menu-search form-control round"/>
+        <div class="media">
+          <div class="media-left">
+            <span class="avatar avatar-sm avatar-online rounded-circle">
+              <img src="../app-assets/images/portrait/small/avatar-s-1.png"><i></i>
+            </span>
+          </div>    
+          <div class="media-body">
+            <h6 class="media-heading"><?php echo $_SESSION["user"]["nombre_u"].' '.$_SESSION["user"]["apellido_u"]; ?></h6>
+            <p class="notification-text font-small-3 text-muted"><?php echo $_SESSION["user"]["correo_u"]; ?></p>
+          </div>
+        </div>
       </div>
 
       <div class="main-menu-content">
